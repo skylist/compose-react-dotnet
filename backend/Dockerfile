@@ -4,7 +4,7 @@ COPY *.csproj .
 RUN dotnet restore
 
 COPY . .
-RUN dotnet public -c Release -o build
+RUN dotnet publish -c Release -o build
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.2
 WORKDIR /release
