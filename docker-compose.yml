@@ -1,0 +1,22 @@
+version: '3'
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - '8080:80'
+
+  backend:
+    build: ./backend
+    ports:
+      - '5001:5001'
+    networks:
+      - backend-network
+
+  db:
+    build: ./database
+    networks:
+      - backend-network
+
+networks:
+  backend-network:
+    driver: bridge
