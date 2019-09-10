@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace backend.task
 {
-    class TaskController
+    [Route("api/[controller]")]
+    [ApiController]
+    class TaskController: ControllerBase
     {
         private readonly TaskService _service;
         public TaskController(TaskService service)
